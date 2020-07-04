@@ -1,11 +1,16 @@
 import React from 'react';
 import * as eva from '@eva-design/eva';
-import { ApplicationProvider, Layout, Text } from '@ui-kitten/components';
+import { Button, Text } from '@ui-kitten/components';
 import Swiper from 'react-native-swiper'
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView, View, Image, StyleSheet } from 'react-native'
 
 const Tutorial: React.FC = () => {
+
+  const handlerPressJump = () => {
+    alert("Pular tutorial");
+  };
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <LinearGradient
@@ -62,6 +67,7 @@ const Tutorial: React.FC = () => {
             <Text style={styles.desc}>Within non-expo environment, we also need to complete installation for iOS by linking react-native-svg.</Text>
           </View>
         </Swiper>
+        <Text style={styles.button} onPress={handlerPressJump} category='label'>Pular</Text>
       </LinearGradient>
     </SafeAreaView>
   );
@@ -87,6 +93,14 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins_400Regular",
     flexWrap: "wrap",
     maxWidth: 250
+  },
+  button: {
+    color: "#FFF",
+    fontFamily: "Poppins_600SemiBold",
+    marginTop: 788,
+    marginLeft: 10,
+    position: "absolute",
+    fontSize: 15
   }
 });
 
