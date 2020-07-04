@@ -61,25 +61,21 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 
 From your command line:
 
-### Install API 
+### Install mobile 
 
 ```bash
 # Clone this repository
 $ git clone https://github.com/jpsoarxs/MH-3
 
 # Go into the repository
-$ cd MH-3/backend
+$ cd MH-3/mobile
 
 # Install dependencies
 $ yarn install
 
-# Start Strapi in watch mode
-$ yarn develop
-
-# Start Strapi without watch mode
+# Start expo
 $ yarn start
 
-# running default port 1337
 ```
 
 ## :memo: License
