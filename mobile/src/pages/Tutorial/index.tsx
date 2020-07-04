@@ -5,10 +5,10 @@ import Swiper from 'react-native-swiper'
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView, View, Image, StyleSheet } from 'react-native'
 
-const Tutorial: React.FC = () => {
+const Tutorial: React.FC = ({ navigation }) => {
 
   const handlerPressJump = () => {
-    alert("Pular tutorial");
+    navigation.navigate("Login")
   };
 
   return (
