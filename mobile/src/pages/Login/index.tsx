@@ -4,7 +4,8 @@ import { Icon, Input, TopNavigation, TopNavigationAction, Text, Button } from '@
 
 const Login: React.FC = ({ navigation }) => {
 
-  const [value, setValue] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handlerPressBack = () => {
     navigation.goBack()
@@ -53,25 +54,29 @@ const Login: React.FC = ({ navigation }) => {
         <Image style={styles.image} source={require('../../../assets/logo.png')} />
         <Input
           placeholder='Email'
-          value={value}
+          value={email}
           size='large'
-          onChangeText={nextValue => setValue(nextValue)}
+          onChangeText={nextValue => setEmail(nextValue)}
           style={styles.input}
         />
         <Input
-          value={value}
+          value={password}
           placeholder='Senha'
           accessoryRight={renderIcon}
           secureTextEntry={secureTextEntry}
           size='large'
-          onChangeText={nextValue => setValue(nextValue)}
+          onChangeText={nextValue => setPassword(nextValue)}
         />
         <Text style={styles.forgotpassword}>Esqueceu a senha?</Text>
         <Button style={styles.loginButton}>Fazer Login</Button>
         <Text style={styles.ou}>OU</Text>
         <Button accessoryLeft={FacebookIcon} style={styles.facebookButton} status="info">Login com o Facebook</Button>
         <Button accessoryLeft={GoogleIcon} status="danger">Login com o Google</Button>
-
+        <View style={{flexDirection: "row", marginTop: 25, alignSelf: "center"}}>
+          <Text style={styles.text} >Novo usuário?</Text>
+          <Text style={styles.url}> Cadastre-se </Text>
+          <Text style={styles.text}>Aqui!</Text>
+        </View>
       </View>
     </KeyboardAvoidingView>
   );
@@ -105,11 +110,20 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: 'Poppins_400Regular',
     marginTop: 15,
+    color: "#777777",
     marginBottom: 15
   },
   facebookButton: {
     marginBottom: 20
   },
+  text: {
+    fontFamily: 'Poppins_400Regular',
+    color: "#777777"
+  },
+  url: {
+    fontFamily: 'Poppins_400Regular',
+    color: "#FF5B7F"
+  }
 });
 
 export default Login;
