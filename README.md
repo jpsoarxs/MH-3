@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center"> 
-	:heavy_check_mark: {{ project-name }} - Mega Hack 3º :heavy_check_mark:
+	:heavy_check_mark: Compass - Mega Hack 3º :heavy_check_mark:
 </h4>
 <p align="center">	
   
