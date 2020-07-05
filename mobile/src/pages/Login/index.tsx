@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { KeyboardAvoidingView, StyleSheet, View, Image, TouchableWithoutFeedback  } from 'react-native'
 import { Icon, Input, TopNavigation, TopNavigationAction, Text, Button } from '@ui-kitten/components';
 
-const Login: React.FC = ({ navigation }) => {
+const Login: React.FC = ({ navigation }: any) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -11,19 +11,19 @@ const Login: React.FC = ({ navigation }) => {
     navigation.goBack()
   };
 
-  const BackIcon = (props) => (
+  const BackIcon = (props: any) => (
     <Icon {...props} name='arrow-back'/>
   );
 
-  const FacebookIcon = (props) => (
+  const FacebookIcon = (props: any) => (
     <Icon {...props} name='facebook'/>
   );
 
-  const GoogleIcon = (props) => (
+  const GoogleIcon = (props: any) => (
     <Icon {...props} name='google'/>
   );
 
-  const AlertIcon = (props) => (
+  const AlertIcon = (props: any) => (
     <Icon {...props} name='alert-circle-outline'/>
   );
 
@@ -33,7 +33,7 @@ const Login: React.FC = ({ navigation }) => {
     setSecureTextEntry(!secureTextEntry);
   };
 
-  const renderIcon = (props) => (
+  const renderIcon = (props: any) => (
     <TouchableWithoutFeedback onPress={toggleSecureEntry}>
       <Icon {...props} name={secureTextEntry ? 'eye-off' : 'eye'}/>
     </TouchableWithoutFeedback>

@@ -1,11 +1,9 @@
 import React,{useState} from 'react';
-import * as eva from '@eva-design/eva';
 import { Text, Button, Icon } from '@ui-kitten/components';
-import Swiper from 'react-native-swiper'
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView, View, Image, StyleSheet } from 'react-native'
 
-const getStarted: React.FC = ({ navigation }) => {
+const getStarted: React.FC = ({ navigation } : any) => {
 
   const [buttonHover, setButtonHover] = useState('#FFF');
 
@@ -15,7 +13,7 @@ const getStarted: React.FC = ({ navigation }) => {
     navigation.navigate("Tutorial")
   }
 
-  const ArrowIcon = (props) => (
+  const ArrowIcon = (props: any) => (
     <Icon {...props} fill="#FC9272" name='arrow-forward'/>
   );
 
