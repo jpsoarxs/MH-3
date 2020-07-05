@@ -9,13 +9,10 @@ const getStarted: React.FC = ({ navigation }) => {
 
   const [buttonHover, setButtonHover] = useState('#FFF');
 
-  const handlerPressJump = () => {
-    navigation.navigate("Login")
-  };
-
   const hoverButton = () => {
     setButtonHover("#D4D4D4")
     setInterval(() => {setButtonHover("#FFF")},100)
+    navigation.navigate("Tutorial")
   }
 
   const ArrowIcon = (props) => (
