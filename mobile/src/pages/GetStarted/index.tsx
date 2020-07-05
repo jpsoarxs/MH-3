@@ -34,7 +34,7 @@ const getStarted: React.FC = ({ navigation } : any) => {
           <Text style={styles.desc}>Sua conta está pronta! Clique em Comece agora para prosseguir.</Text>
         </View>
         <Button onPress={hoverButton} accessoryRight={ArrowIcon} style={[styles.button, {backgroundColor: buttonHover}]}>
-          <Text style={{color:"#FC9272"}}>Comece agora</Text>
+          <Text style={{color:"#FC9272", fontSize: 12, fontFamily: "Poppins_500Medium"}}>Comece agora</Text>
         </Button>
       </SafeAreaView>
     </LinearGradient>
