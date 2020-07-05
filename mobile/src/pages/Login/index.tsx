@@ -15,6 +15,9 @@ const Login: React.FC = ({ navigation }: any) => {
     navigation.navigate("Register")
   };
 
+  const loginButton = () => {
+    navigation.navigate("Tabbar")
+  }
 
   const BackIcon = (props: any) => (
     <Icon {...props} name='arrow-back'/>
@@ -39,7 +42,6 @@ const Login: React.FC = ({ navigation }: any) => {
       <Icon {...props} name={secureTextEntry ? 'eye-off' : 'eye'}/>
     </TouchableWithoutFeedback>
   );
-
 
   const BackAction = () => (
     <TopNavigationAction onPress={handlerPressBack} icon={BackIcon}/>
@@ -69,7 +71,7 @@ const Login: React.FC = ({ navigation }: any) => {
           onChangeText={nextValue => setPassword(nextValue)}
         />
         <Text style={styles.forgotpassword}>Esqueceu a senha?</Text>
-        <Button style={styles.loginButton}>Fazer Login</Button>
+        <Button onPress={loginButton} style={styles.loginButton}>Fazer Login</Button>
         <Text style={styles.ou}>OU</Text>
         <Button accessoryLeft={FacebookIcon} style={styles.facebookButton} status="info">Login com o Facebook</Button>
         <Button accessoryLeft={GoogleIcon} status="danger">Login com o Google</Button>
@@ -92,7 +94,9 @@ const styles = StyleSheet.create({
   },
   image: {
     alignSelf: "center",
-    marginBottom: 70
+    marginBottom: 70,
+    width: 170,
+    height: 150
   },
   input: {
     marginBottom: 20

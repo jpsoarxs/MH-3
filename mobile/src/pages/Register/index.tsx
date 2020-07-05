@@ -5,8 +5,17 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const Register: React.FC = ({ navigation }: any) => {
 
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirm, setConfirm] = useState('');
+
+  const [waningName, setWaningName] = useState('');
+  const [waningEmail, setWaningEmail] = useState('');
+  const [waningPassowd, setWaningPasswod] = useState('');
+  const [waningConfirm, setWaningConfirm] = useState('');
+
+  const [checkPassword, setCheckPassword] = useState('');
 
   const handlerPressBack = () => {
     navigation.goBack()
@@ -49,6 +58,33 @@ const Register: React.FC = ({ navigation }: any) => {
     <TopNavigationAction onPress={handlerPressBack} icon={BackIcon}/>
   );
 
+  const registerButton = () => {
+    if (name == '') {
+      setWaningName('danger')
+    } else if (email == '') {
+      setWaningName('')
+      setWaningEmail('danger')
+    } else if (password == '') {
+      setWaningEmail('')
+      setWaningName('')
+      setWaningEmail('')
+      setWaningPasswod('danger')
+    } else if (confirm == '') {
+      setWaningPasswod('')
+      setWaningName('')
+      setWaningEmail('')
+      setWaningConfirm('danger')
+    } else {
+      if (password != confirm) {
+        setCheckPassword('As senhas não coincidem')
+        setWaningPasswod('danger')
+        setWaningConfirm('danger')
+      } else {
+        navigation.navigate("Interests")
+      }
+    }
+  }
+
   return (
     <KeyboardAvoidingView style={{flex:1, backgroundColor: "#FFF"}}>
       <LinearGradient
@@ -63,15 +99,16 @@ const Register: React.FC = ({ navigation }: any) => {
             accessoryLeft={BackAction}
             style={{backgroundColor: "transparent", marginTop: -40}}
           />
-          <Image style={styles.image} source={require('../../../assets/logo_white.png')} />
+          <Image style={styles.image} source={require('../../../assets/logo_color.png')} />
       </LinearGradient>
       <View style={styles.container}>
         <Input
           placeholder='Nome'
-          value={email}
+          value={name}
           size='large'
-          onChangeText={nextValue => setEmail(nextValue)}
+          onChangeText={nextValue => setName(nextValue)}
           style={styles.input}
+          status={waningName}
         />
         <Input
           placeholder='Email'
@@ -79,6 +116,7 @@ const Register: React.FC = ({ navigation }: any) => {
           size='large'
           onChangeText={nextValue => setEmail(nextValue)}
           style={styles.input}
+          status={waningEmail}
         />
         <Input
           value={password}
@@ -87,17 +125,20 @@ const Register: React.FC = ({ navigation }: any) => {
           secureTextEntry={secureTextEntry}
           style={styles.input}
           size='large'
+          status={waningPassowd}
           onChangeText={nextValue => setPassword(nextValue)}
         />
         <Input
-          value={password}
+          value={confirm}
           placeholder='Confirmar senha'
           accessoryRight={renderIcon}
           secureTextEntry={secureTextEntry}
           size='large'
-          onChangeText={nextValue => setPassword(nextValue)}
+          onChangeText={nextValue => setConfirm(nextValue)}
+          status={waningConfirm}
+          caption={checkPassword}
         />
-        <Button appearance='outline' style={styles.loginButton}>Criar a conta</Button>
+        <Button appearance='outline' onPress={registerButton} style={styles.loginButton}>Criar a conta</Button>
         <Text style={styles.ou}>OU</Text>
         <View style={{justifyContent: 'space-between',flexDirection: 'row', alignSelf: "center"}}>
         <Button 
@@ -130,6 +171,8 @@ const styles = StyleSheet.create({
   },
   image: {
     alignSelf: "center",
+    width: 100,
+    height: 90
   },
   input: {
     marginBottom: 20

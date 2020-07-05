@@ -10,7 +10,7 @@ const gift: React.FC = ({ navigation } : any) => {
   const hoverButton = () => {
     setButtonHover("#D4D4D4")
     setInterval(() => {setButtonHover("#FFF")},100)
-    navigation.navigate("Tutorial")
+    navigation.navigate("Tabbar")
   }
 
   const ArrowIcon = (props: any) => (
@@ -31,7 +31,8 @@ const gift: React.FC = ({ navigation } : any) => {
         <View>
           <Image style={styles.image} source={require('../../../assets/gift/0.png')} />
           <Text style={styles.title}>Parabéns</Text>
-          <Text style={styles.desc}>Obrigada por iniciar a sua jornada no nosso app!</Text>
+          <Text style={styles.desc}>Obrigada por iniciar a sua jornada no nosso aplicativo!</Text>
+          <Text style={styles.desc}>+25 pontos</Text>
         </View>
         <Button onPress={hoverButton} accessoryRight={ArrowIcon} style={[styles.button, {backgroundColor: buttonHover}]}>
           <Text style={{color:"#FC9272", fontSize: 12, fontFamily: "Poppins_500Medium"}}>Continuar</Text>

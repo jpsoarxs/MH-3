@@ -10,7 +10,7 @@ const getStarted: React.FC = ({ navigation } : any) => {
   const hoverButton = () => {
     setButtonHover("#D4D4D4")
     setInterval(() => {setButtonHover("#FFF")},100)
-    navigation.navigate("Tutorial")
+    navigation.navigate("Gift")
   }
 
   const ArrowIcon = (props: any) => (

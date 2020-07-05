@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Jornada",
-    "slug": "Jornada",
+    "name": "Compass",
+    "slug": "Compass",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
