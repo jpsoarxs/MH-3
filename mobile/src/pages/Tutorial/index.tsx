@@ -8,7 +8,7 @@ import { SafeAreaView, View, Image, StyleSheet } from 'react-native'
 const Tutorial: React.FC = ({ navigation }: any) => {
 
   const handlerPressJump = () => {
-    navigation.navigate("Login")
+    navigation.navigate("Gift")
   };
 
   return (

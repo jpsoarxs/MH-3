@@ -4,13 +4,14 @@ import { AppLoading } from "expo";
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { AppNavigator } from './navigation.component';
-import { Poppins_400Regular, Poppins_600SemiBold, useFonts } from '@expo-google-fonts/poppins'
+import { Poppins_400Regular, Poppins_600SemiBold, Poppins_500Medium, useFonts } from '@expo-google-fonts/poppins'
 
 export default function App() {
 
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
     Poppins_600SemiBold,
+    Poppins_500Medium
   });
 
   if (!fontsLoaded) {

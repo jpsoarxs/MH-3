@@ -6,6 +6,7 @@ import Tutorial from './src/pages/Tutorial';
 import Login from './src/pages/Login';
 import getStarted from './src/pages/GetStarted';
 import Register from './src/pages/Register';
+import Gift from './src/pages/Gift';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -16,6 +17,7 @@ export const AppNavigator = () => (
       <Screen name='Login' component={Login}/>
       <Screen name='Register' component={Register}/>
       <Screen name='GetStarted' component={getStarted}/>
+      <Screen name='Gift' component={Gift}/>
     </Navigator>
   </NavigationContainer>
 );
