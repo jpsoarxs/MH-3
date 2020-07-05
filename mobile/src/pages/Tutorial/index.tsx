@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     color: "#FFF",
     fontFamily: "Poppins_600SemiBold",
     marginTop: 788,
-    marginLeft: 10,
+    marginLeft: 30,
     position: "absolute",
     fontSize: 15
   }

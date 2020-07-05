@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { KeyboardAvoidingView, StyleSheet, View, Image, TouchableWithoutFeedback  } from 'react-native'
 import { Icon, Input, TopNavigation, TopNavigationAction, Text, Button } from '@ui-kitten/components';
+import { LinearGradient } from 'expo-linear-gradient';
 
-const Login: React.FC = ({ navigation }: any) => {
+const Register: React.FC = ({ navigation }: any) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -11,13 +12,12 @@ const Login: React.FC = ({ navigation }: any) => {
     navigation.goBack()
   };
 
-  const handlerRegister = () => {
-    navigation.navigate("Register")
+  const handlerLogin = () => {
+    navigation.navigate("Login")
   };
 
-
   const BackIcon = (props: any) => (
-    <Icon {...props} name='arrow-back'/>
+    <Icon fill="#FFF" {...props} name='arrow-back'/>
   );
 
   const FacebookIcon = (props: any) => (
@@ -26,6 +26,10 @@ const Login: React.FC = ({ navigation }: any) => {
 
   const GoogleIcon = (props: any) => (
     <Icon {...props} name='google'/>
+  );
+
+  const AlertIcon = (props: any) => (
+    <Icon {...props} name='alert-circle-outline'/>
   );
 
   const [secureTextEntry, setSecureTextEntry] = React.useState(true);
@@ -47,12 +51,28 @@ const Login: React.FC = ({ navigation }: any) => {
 
   return (
     <KeyboardAvoidingView style={{flex:1, backgroundColor: "#FFF"}}>
-      <TopNavigation
-        accessoryLeft={BackAction}
-        style={{marginTop: 30, backgroundColor: "transparent"}}
-      />
+      <LinearGradient
+        colors={['#FF5B7F', '#FC9272']}
+        style={{
+          width: "100%",
+          height: 215,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          <TopNavigation
+            accessoryLeft={BackAction}
+            style={{backgroundColor: "transparent", marginTop: -40}}
+          />
+          <Image style={styles.image} source={require('../../../assets/logo_white.png')} />
+      </LinearGradient>
       <View style={styles.container}>
-        <Image style={styles.image} source={require('../../../assets/logo.png')} />
+        <Input
+          placeholder='Nome'
+          value={email}
+          size='large'
+          onChangeText={nextValue => setEmail(nextValue)}
+          style={styles.input}
+        />
         <Input
           placeholder='Email'
           value={email}
@@ -65,18 +85,37 @@ const Login: React.FC = ({ navigation }: any) => {
           placeholder='Senha'
           accessoryRight={renderIcon}
           secureTextEntry={secureTextEntry}
+          style={styles.input}
           size='large'
           onChangeText={nextValue => setPassword(nextValue)}
         />
-        <Text style={styles.forgotpassword}>Esqueceu a senha?</Text>
-        <Button style={styles.loginButton}>Fazer Login</Button>
+        <Input
+          value={password}
+          placeholder='Confirmar senha'
+          accessoryRight={renderIcon}
+          secureTextEntry={secureTextEntry}
+          size='large'
+          onChangeText={nextValue => setPassword(nextValue)}
+        />
+        <Button appearance='outline' style={styles.loginButton}>Criar a conta</Button>
         <Text style={styles.ou}>OU</Text>
-        <Button accessoryLeft={FacebookIcon} style={styles.facebookButton} status="info">Login com o Facebook</Button>
-        <Button accessoryLeft={GoogleIcon} status="danger">Login com o Google</Button>
+        <View style={{justifyContent: 'space-between',flexDirection: 'row', alignSelf: "center"}}>
+        <Button 
+          accessoryLeft={FacebookIcon} 
+          style={styles.facebookButton} 
+          status="info">
+            <Text style={{fontSize: 8, color: "#FFF"}}>Login com o Facebook</Text>
+        </Button>
+        <Button 
+          accessoryLeft={GoogleIcon} 
+          style={styles.googleButton} 
+          status="danger">
+            <Text style={{fontSize: 8, color: "#FFF"}}>Login com o Google</Text>
+        </Button>
+        </View>
         <View style={{flexDirection: "row", marginTop: 25, alignSelf: "center"}}>
-          <Text style={styles.text} >Novo usuário?</Text>
-          <Text style={styles.url} onPress={handlerRegister}> Cadastre-se </Text>
-          <Text style={styles.text}>Aqui!</Text>
+          <Text style={styles.text} >Já tem uma conta?</Text>
+          <Text style={styles.url} onPress={handlerLogin}> Faça login </Text>
         </View>
       </View>
     </KeyboardAvoidingView>
@@ -85,14 +124,12 @@ const Login: React.FC = ({ navigation }: any) => {
 
 const styles = StyleSheet.create({
   container: {
-    position: "absolute",
-    marginTop: 100,
     alignSelf: "center",
     width: 350,
+    marginTop: 25
   },
   image: {
     alignSelf: "center",
-    marginBottom: 70
   },
   input: {
     marginBottom: 20
@@ -105,7 +142,8 @@ const styles = StyleSheet.create({
     color: "#777777"
   },
   loginButton: {
-    marginTop: 50
+    marginTop: 40,
+    height: 50
   },
   ou: {
     textAlign: "center",
@@ -115,7 +153,13 @@ const styles = StyleSheet.create({
     marginBottom: 15
   },
   facebookButton: {
-    marginBottom: 20
+    width: 150,
+    height: 50,
+  },
+  googleButton: {
+    width: 150,
+    height: 50,
+    marginLeft: 15
   },
   text: {
     fontFamily: 'Poppins_400Regular',
@@ -127,4 +171,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Login;
+export default Register;
