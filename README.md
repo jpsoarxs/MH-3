@@ -39,7 +39,7 @@ Grande não apenas por quebrar barreiras geográficas, mas também pela dimensã
 
 ## 💻 Project
 
-Description here
+O APP Compass trabalha com leitura em uma prática que tenha significado para a vida do estudante. Pensando nas inúmeras realidades enfrentadas por estudantes da rede pública de ensino e nas incertezas que apresentam em relação ao futuro profissional e acadêmico, o nosso aplicativo proporcionará uma jornada de conhecimento com indicações de leitura de acordo com o perfil do usuário, permitirá a seleção de jornadas de aprendizagem agrupadas por áreas do conhecimento e profissões. A trilha oferecerá conteúdos em formatos diversos (QUIS, notícias, mini cursos) para o desenvolvimento de habilidades e competências do jovem. A experiência no APP é gamificada, portanto, ao atingir suas metas, concluir suas trilhas ou até mesmo convidar amigos para participar irá gerar pontos. O aplicativo será aberto ao público, portanto, estudantes da rede particular de ensino ou estudantes que já concluíram o ensino médio, que cursam preparatórios para o vestibular, por exemplo, também poderão ter acesso.
 
 <h1 align="center">
     <img alt="Example" title="Example" src=".github/capa.png" width="500px" />
