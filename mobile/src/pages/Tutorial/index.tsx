@@ -52,19 +52,19 @@ const Tutorial: React.FC = ({ navigation }: any) => {
             />
           }>
           <View>
-            <Image style={styles.image} source={require('../../../assets/Tutorial/1.png')} />
-            <Text style={styles.title}>Página 1</Text>
-            <Text style={styles.desc}>Within non-expo environment, we also need to complete installation for iOS by linking react-native-svg.</Text>
+            <Image style={[styles.image, {height: 243, marginBottom: 85}]} source={require('../../../assets/Tutorial/1.png')} />
+            <Text style={styles.title}>Tenha uma leitura pratica nas mãos</Text>
+            <Text style={styles.desc}>Crie um hábito de leitura independente e fluente, se envolva mais em atividades no mercado profissional.</Text>
           </View>
           <View>
-          <Image style={styles.image} source={require('../../../assets/Tutorial/1.png')} />
-            <Text style={styles.title}>Página 2</Text>
-            <Text style={styles.desc}>Within non-expo environment, we also need to complete installation for iOS by linking react-native-svg.</Text>
+          <Image style={[styles.image, {width: 307, height: 243, marginBottom: 85}]} source={require('../../../assets/Tutorial/3.png')} />
+            <Text style={styles.title}>Escolha a área prossional que lhe interessa</Text>
+            <Text style={[styles.desc, {maxWidth: 350}]}>Tenha acesso as leituras ná tematica da empregabilidade escolhida e amplie seu orisonte atravez das novidades do mercado de trabalho.</Text>
           </View>
           <View>
-          <Image style={styles.image} source={require('../../../assets/Tutorial/1.png')} />
-            <Text style={styles.title}>Página 3</Text>
-            <Text style={styles.desc}>Within non-expo environment, we also need to complete installation for iOS by linking react-native-svg.</Text>
+          <Image style={[styles.image, {width: 307, height: 243, marginBottom: 85}]} source={require('../../../assets/Tutorial/2.png')} />
+            <Text style={styles.title}>Desenvolva suas habilidades</Text>
+            <Text style={styles.desc}>Participe dos nossos quizzes, acumule pontos e aprimore suas habilidades com base no mercado de trabalho.</Text>
           </View>
         </Swiper>
         <Text style={styles.button} onPress={handlerPressJump} category='label'>Pular</Text>

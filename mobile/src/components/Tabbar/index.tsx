@@ -7,6 +7,8 @@ import { Dimensions } from "react-native";
 import Login from '../../../src/pages/Login';
 import Badges from '../../../src/pages/Badges';
 import Home from '../../../src/pages/Home';
+import Profile from '../../../src/pages/Profile';
+import Read from '../../../src/pages/Read';
 
 import { StyleSheet } from "react-native";
 
@@ -35,11 +37,11 @@ const Tabbar = () => {
         }}
       />
       <Screen
-        name="Books"
-        component={Login}
+        name="Read"
+        component={Read}
         options={{
-          tabBarLabel: "Books",
-          tabBarAccessibilityLabel: "Books",
+          tabBarLabel: "Read",
+          tabBarAccessibilityLabel: "Read",
           tabBarIcon: ({ color }) => (
             <Icon name="book" color={color} size={26} />
           ),
@@ -57,8 +59,8 @@ const Tabbar = () => {
         }}
       />
       <Screen
-        name="User"
-        component={Login}
+        name="Profile"
+        component={Profile}
         options={{
           tabBarLabel: "Interests",
           tabBarAccessibilityLabel: "Interests",
